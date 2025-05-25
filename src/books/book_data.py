@@ -1,10 +1,3 @@
-
-from fastapi import FastAPI
-from pydantic import BaseModel
-
-app = FastAPI()
-
-
 books = [
         {   "id": 1,
             "isbn":"9781593279509",
@@ -66,29 +59,3 @@ books = [
         },
 
 ]
-
-
-class Book(BaseModel):
-    pass
-
-@app.get('/books', red)
-async def get_all_books():
-    return books
-
-
-@app.post('/books')
-async def create_a_book() -> dict:
-    pass
-
-
-@app.get('/book/{book_id}')
-async def get_book(book_id:int) -> dict:
-    pass
-
-@app.get('/book/{book_id}')
-async def update_book(book_id:int) -> dict:
-    pass
-
-@app.get('/book/{book_id}')
-async def delete_book(book_id:int) -> dict:
-    pass
